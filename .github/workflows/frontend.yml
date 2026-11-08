@@ -51,7 +51,7 @@ jobs:
       ######################################################
 
       - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.1.0
+        uses: appleboy/ssh-action@25ce8cbbcb08177468c7ff7ec5cbfa236f9341e1 
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ec2-user
@@ -125,7 +125,7 @@ jobs:
 
       - name: 📧 Send Deployment Report
         if: success() || failure()
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@c7306860e9052c580b99bd553f697837e5b6c500
         with:
           server_address: smtp.gmail.com
           server_port: 465
